@@ -1,0 +1,47 @@
+// you can also use imports, for example:
+import java.util.*;
+import java.io.File; 
+import java.io.FileNotFoundException; 
+//import java.util.Scanner;
+//import java.util.HashSet;
+//import java.util.Set;
+
+class Solution {
+public static void main(String args[])throws FileNotFoundException{
+File file = 
+      new File("\\test-input.txt"); 
+    Scanner sc = new Scanner(file); 
+  Set<Integer> intSet = new  HashSet<>();
+
+
+    while (sc.hasNextLine()){
+String[] someThing = sc.nextLine().split(",");
+for(int z=0;z<someThing.length;z++){
+intSet.add(Integer.parseInt(someThing[z]));
+}
+int[] solInt = new int[intSet.size()];
+int x=0;
+for(int setInt:intSet){
+solInt[x++] = setInt;
+}
+ System.out.println(new solution(solInt)); }
+}
+    public int solution(int[] A) {
+int sumofAll = A.length*(A.length+1)/2;
+int sumofGiven=0;
+boolean flag = false;
+int count = 0;
+for(int i =0;i<A.length;i++){
+sumofGiven= sumofGiven+A[i];}
+System.out.println(sumofGiven);
+System.out.println(sumofAll);
+ return sumofAll - sumofGiven;
+    }
+}
+
+/*for(int i =0; i<a.length;i++)
+    {
+        a[i]= Integer.parseInt(s_array[i]);// Parsing from string to int
+
+        System.out.println(a[i]);
+    }*/
